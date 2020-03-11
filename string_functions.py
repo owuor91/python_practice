@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
+from read_file_functions import pick_word
+
 
 def is_palindrome():
     user_string = input("Enter a String\n").lower()
@@ -23,3 +25,16 @@ def get_ny_times_titles():
     for story_heading in soup.find_all('h2'):
         heading = story_heading.string
         print(heading)
+
+
+def guess_word():
+    random_word = pick_word()
+    hint = []
+    word_ls = list(random_word)
+    for char in word_ls:
+        if (word_ls.index(char) == 0 or word_ls.index(char) == len(word_ls) - 1):
+            hint.append(char)
+        else:
+            hint.append('_')
+
+    print(f"Guess the letters for the word {''.join(hint)}")

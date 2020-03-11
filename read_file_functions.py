@@ -1,3 +1,6 @@
+import random
+
+
 def read():
     with open("desert_file.txt", "r") as open_file:
         line = open_file.readline()
@@ -58,3 +61,8 @@ def find_overlapping_numbers():
     common = [n for n in prime_list if (n in happy_list)]
     common = [int(n) for n in common]
     print(common)
+
+
+def pick_word():
+    word_list = read_file_contents('sowpods.txt')
+    return random.sample(word_list, 1)[0]

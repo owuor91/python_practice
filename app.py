@@ -1,8 +1,8 @@
-import read_file_functions
+from json_funcs import read_json
 
 
 def main():
-    read_file_functions.print_number_of_categories()
+    read_json()
 
 
 if __name__ == '__main__':

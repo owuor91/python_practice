@@ -52,9 +52,9 @@ def age_find():
 
 
 def largest(one, two, three):
-    larger = compare_two(one, two)
-    return compare_two(larger, three)
-
+    num_list = [one, two, three]
+    num_list.sort()
+    return num_list[len(num_list) - 1]
 
 def compare_two(a, b):
     if (a > b):
